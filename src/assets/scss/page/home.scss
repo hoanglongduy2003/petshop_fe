@@ -1,0 +1,439 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg {
+  background-color: $Cultured;
+  font-family: $Roboto;
+  padding: 20px 0 50px 0;
+
+  .home {
+    max-width: $xl;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @include max-screen($xl) {
+      max-width: 900px;
+    }
+
+    @include max-screen($sx) {
+      padding: 0 25px;
+    }
+
+    &-banner {
+      position: relative;
+      width: 100%; 
+      &-img {
+        width: 100%;
+
+        img {
+          max-height: 498px;
+
+          @include max-screen($lg) {
+            height: 100%;
+          }
+
+          width: 100%;
+        }
+      }
+
+      &-text {
+        position: absolute;
+        top: 30%;
+        left: 80px;
+        bottom: 50%;
+
+        .bottom {
+          margin-top: 20px;
+
+          @include max-screen($sm) {
+            margin-top: 10px;
+          }
+
+          button {
+            @include Size(24px, null, normal);
+            @include Flex(flex, null, center);
+            @include Gap(5px, 5px);
+            background-color: $EagleGreen;
+            color: white;
+            padding: 16px 25px;
+            border-radius: 50px;
+            transition: all 0.5s ease-in-out;
+            border: 1px solid $EagleGreen;
+            gap: 5px;
+            width: 18rem;
+
+            div {
+              margin-right: 1.5rem;
+              margin-left: 0.3rem;
+            }
+
+            @include max-screen($sm) {
+              @include Size(16px, null, normal);
+              padding: 10px 20px;
+
+              .rightIcon {
+                width: 20px;
+              }
+            }
+
+            &:hover {
+              background-color: transparent;
+              color: $EagleGreen;
+            }
+          }
+        }
+
+        .top {
+          &-title {
+            @include Size(50px, 700, normal);
+
+            @include max-screen($sm) {
+              @include Size(35px, 700, normal);
+            }
+
+            @include max-screen($sm) {
+              @include Size(16px, 700, normal);
+            }
+
+            color: black;
+            line-height: 1;
+          }
+
+          h1 {
+            color: $EagleGreen;
+            font-size: 45px;
+          }
+
+          p {
+            color: black;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: normal;
+
+            @include max-screen($sm) {
+              @include Size(8px, null, normal);
+            }
+
+            @include max-screen($sm) {
+              @include Size(8px, null, normal);
+            }
+          }
+        }
+
+        .slogan {
+          p {
+            color: black;
+            font-size: 19px;
+            font-weight: 500;
+            margin: 1rem 0.2rem 1.5rem 0.2rem;
+          }
+        }
+      }
+    }
+
+    &-listCate {
+      @include Gird(grid, 4);
+      @include Gap(20px, 20px);
+      margin-top: 40px;
+      align-items: center;
+
+      @include max-screen($sm) {
+        @include Gird(grid, 2);
+      }
+
+      &-item {
+        position: relative;
+        cursor: pointer;
+
+        .top {
+          width: 100%;
+
+          img {
+            border-radius: 10px;
+            width: 100%;
+            height: 280px;
+          }
+        }
+
+        .bottom {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+          width: 100%;
+          height: 30%;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+
+          button {
+            @include Size(16px, 600, normal);
+            background-color: white;
+            border-radius: 5px;
+            padding: 16px 20px;
+            border: none;
+            color: black;
+            line-height: 1;
+            transition: background-color 0.3s ease;
+            font-family: $Roboto;
+
+            @include max-screen($sm) {
+              @include Size(16px, null, normal);
+              padding: 10px 13px;
+            }
+
+            @include max-screen($sx) {
+              @include Size(13px, null, normal);
+              padding: 10px 10px;
+            }
+
+            &:hover {
+              background-color: #f0f0f0;
+            }
+          }
+        }
+
+        .title {
+          position: absolute;
+          bottom: 20px;
+          width: 100%;
+          color: white;
+          font-size: 20px;
+          font-weight: 500;
+          text-align: center;
+          margin-bottom: 0px;
+        }
+
+        &:hover {
+          .bottom {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &-product {
+      margin-top: 50px;
+      border: 1px solid $EagleGreen;
+      border-radius: 15px;
+      position: relative;
+
+      &-title {
+        position: absolute;
+        background: var(--nn, #f7f7f7);
+        padding: 0 20px;
+        top: -19px;
+        left: 50%;
+        color: black;
+        @include Size(24px, 500, normal);
+        transform: translateX(-50%);
+
+        @include max-screen($sm) {
+          @include Size(20px, null, normal);
+        }
+
+        @include max-screen($sx) {
+          @include Size(16px, null, normal);
+          text-align: center;
+        }
+      }
+
+      &-prev {
+        position: absolute;
+        top: 50%;
+        left: -25px;
+        transform: translateY(-50%);
+      }
+
+      &-next {
+        position: absolute;
+        top: 50%;
+        right: -25px;
+        transform: translateY(-50%);
+      }
+
+      .button {
+        background-color: $EagleGreen;
+        border: 1px solid $EagleGreen;
+        width: 49px;
+        height: 49px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .carousel {
+        margin: 0 auto;
+        padding-bottom: 25px;
+        margin: 40px 50px;
+
+        @include max-screen($sx) {
+          margin: 30px 0;
+        }
+
+        .card {
+          border-radius: 10px;
+          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          margin: auto 0.5rem;
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          height: 100%;
+          cursor: pointer;
+
+          &:hover {
+            .card-name {
+              color: $EagleGreen;
+            }
+          }
+
+          .product--image {
+            position: relative;
+
+            img {
+              border-top-left-radius: 10px;
+              border-top-right-radius: 10px;
+              width: 100%;
+              height: 16em;
+              object-fit: cover;
+            }
+
+            .svg {
+              position: absolute;
+              width: 30px;
+              height: 30px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+              right: 20px;
+              top: 15px;
+              background-color: white;
+            }
+          }
+
+          &-information {
+            @include Flex(flex, space-between, center);
+            margin-top: 20px;
+            padding: 0 10px;
+            padding-bottom: 10px;
+
+            .price {
+              @include Size(19px, 500, normal);
+              color: var(--Primary, $EagleGreen);
+            }
+
+            .sold {
+              @include Size(14px, 400, normal);
+              color: var(--NEU-3, $SonicSilver);
+              text-align: right;
+            }
+          }
+
+          &-name {
+            @include Size(19px, 400, normal);
+            width: 100%;
+            height: 100%;
+            margin-top: 5px;
+            padding: 0 10px;
+            color: black;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        .react-multiple-carousel__arrow--right {
+          display: none;
+        }
+
+        .react-multiple-carousel__arrow--left {
+          display: none;
+        }
+
+        .react-multi-carousel-dot-list {
+          bottom: -1px;
+
+          .react-multi-carousel-dot {
+            button {
+              width: 20px;
+              height: 20px;
+              background-color: $SilverSand;
+              border-color: $SilverSand;
+            }
+          }
+
+          .react-multi-carousel-dot--active {
+            button {
+              border-color: $EagleGreen;
+              background-color: $EagleGreen;
+            }
+          }
+        }
+
+        .react-multi-carousel-track {
+          .react-multi-carousel-item {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    &-blog {
+      margin: 40px 0px;
+
+      .carousel {
+        margin: 0 auto;
+        padding-bottom: 20px;
+
+        @include max-screen($sx) {
+          margin: 30px 0;
+        }
+
+        .react-multiple-carousel__arrow--right {
+          display: none;
+        }
+
+        .react-multiple-carousel__arrow--left {
+          display: none;
+        }
+
+        .react-multi-carousel-dot-list {
+          bottom: -1px;
+
+          .react-multi-carousel-dot {
+            button {
+              width: 20px;
+              height: 20px;
+              background-color: $SilverSand;
+              border-color: $SilverSand;
+            }
+          }
+
+          .react-multi-carousel-dot--active {
+            button {
+              border-color: $EagleGreen;
+              background-color: $EagleGreen;
+            }
+          }
+        }
+
+        .react-multi-carousel-track {
+          .react-multi-carousel-item {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

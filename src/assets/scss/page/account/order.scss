@@ -1,0 +1,91 @@
+@import "../../utils/functions.scss";
+@import "../../utils/variables.scss";
+
+.toShip {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+
+  &-status {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: 20px 30px 20px 30px;
+
+    &-name {
+      color: red;
+    }
+  }
+
+  &-box {
+    &-top {
+      padding: 15px 30px 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+      border-top: 1px solid rgba(0, 0, 0, 0.09);
+
+      &-item {
+        flex: 1;
+        display: flex;
+        gap: 10px;
+
+        &-img {
+          img {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+
+      &-price {
+        color: $EagleGreen;
+      }
+    }
+
+    &-bottom {
+      border-top: 1px solid rgba(0, 0, 0, 0.09);
+      background-color: $BabyPowder;
+      padding: 20px 30px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-total {
+        text-align: end;
+
+        span {
+          font-size: 24px;
+          line-height: 30px;
+          color: $EagleGreen;
+        }
+      }
+
+      &-action {
+        @include Flex(Flex, flex-start, center);
+        &-abort {
+          cursor: pointer;
+          margin: 10px 0;
+          color: white;
+          border: 1px solid red;
+          border-radius: 5px;
+          padding: 10px 25px;
+          background-color: red;
+          font-size: 16px;
+        }
+        .review {
+          color: black;
+          margin-left: 10px;
+          border-color: white;
+          cursor: pointer;
+          &:hover {
+            color: $EagleGreen;
+          }
+        }
+      }
+    }
+  }
+}

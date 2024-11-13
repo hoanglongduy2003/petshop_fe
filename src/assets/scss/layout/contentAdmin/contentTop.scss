@@ -1,0 +1,96 @@
+@import "../../utils/functions.scss";
+@import "../../utils/variables.scss";
+
+.content-top {
+  @include Flex(flex, space-between, center);
+  margin-bottom: 32px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+  &-left {
+    @include Flex(flex, flex-start, center);
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 24px;
+
+        &:hover {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+
+    .sidebar-toggler {
+      @include Flex(flex, flex-start, center);
+      margin-right: 12px;
+
+      img {
+        width: 20px;
+      }
+    }
+
+    .content-top-title {
+      color: white;
+      @include Size(20px, 600, normal);
+    }
+  }
+
+  &-btn {
+    @include Flex(flex, flex-end, center);
+    margin-left: 18px;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 24px;
+
+        &:hover {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+    .notification-btn {
+      svg {
+        cursor: pointer;
+        margin-left: 18px;
+        path {
+          fill: $TaupeGray;
+        }
+      }
+      &:hover {
+        svg {
+          margin-left: 18px;
+          path {
+            fill: $EagleGreen;
+          }
+        }
+      }
+    }
+    .notification-user {
+      svg {
+        cursor: pointer;
+        margin-left: 18px;
+        path {
+          fill: $TaupeGray;
+        }
+      }
+      &:hover {
+        svg {
+          margin-left: 18px;
+          path {
+            fill: $EagleGreen;
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,22 @@
+@import "../../utils/functions.scss";
+@import "../../utils/variables.scss";
+
+.main-content {
+  background-color: #f8f8fa;
+  flex: 1;
+  padding: 18px 32px;
+
+  @include max-screen(1400px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include max-screen(1200px) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .btn-table {
+    margin-bottom: 16px;
+  }
+}

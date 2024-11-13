@@ -1,0 +1,224 @@
+@function yummy-shadow($colour, $bg-colour, $size, $width) {
+  $shadow: ();
+  $count: round($width/($size * $dot-spacing));
+
+  @for $i from 1 through $count - 1 {
+    @if $i % 2 == 0 {
+      $shadow: append($shadow, 0 $size * $i * $dot-spacing 0 $colour, comma);
+    } @else {
+      $shadow: append(
+        $shadow,
+        $size * $dot-spacing/1.32 $size * $i * $dot-spacing 0 $bg-colour,
+        comma
+      );
+    }
+  }
+
+  @return $shadow;
+}
+
+$form-width: 80%;
+$form-height: 360px;
+$col-icing: #ffb3c9;
+$col-icing-fg: white;
+$col-bg: #ffe0b1;
+$col-fg: #90510e;
+$dot-spacing: 0.8;
+$dot-size: $form-height/10;
+$margin: 20px;
+
+%heading {
+  font-family: Arvo, sans-serif;
+}
+
+.container {
+  font-family: PT Sans, sans-serif;
+  font-size: 18px;
+
+  width: $form-width;
+  min-width: 620px;
+  max-width: 700px;
+  height: $form-height;
+  margin: 50px auto;
+
+  background: $col-bg;
+  border-radius: $dot-size/4;
+  overflow: hidden;
+}
+
+.icing,
+.dough {
+  float: left;
+  padding: $margin;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.icing {
+  width: 33%;
+  position: relative;
+  padding-right: $dot-size / 1.5;
+
+  background: linear-gradient(
+    to right,
+    darken($col-icing, 6%) 0%,
+    $col-icing 80%
+  );
+  color: $col-icing-fg;
+
+  &:before {
+    content: "";
+    width: $dot-size;
+    height: $dot-size;
+    display: block;
+    position: absolute;
+    top: -$dot-size/2;
+    right: -$dot-size/5;
+    z-index: 1;
+
+    background: $col-icing;
+    border-radius: 50%;
+    box-shadow: yummy-shadow($col-icing, $col-bg, $dot-size, $form-height);
+  }
+}
+
+.dough {
+  width: 67%;
+  padding-left: $dot-size;
+
+  color: $col-fg;
+}
+
+.order {
+  flex-grow: 1;
+  padding: $margin 0;
+  margin: $margin 0;
+
+  border: 1px solid $col-icing-fg;
+  border-color: $col-icing-fg transparent;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+h2 {
+  font-size: 1.2em;
+  @extend %heading;
+}
+
+.total {
+  font-size: 3em;
+  @extend %heading;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: $margin;
+  flex-grow: 1;
+}
+
+.inputs {
+  flex-grow: 1;
+}
+
+.buttons {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: $margin / 2;
+}
+
+.column {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-right: $margin / 2;
+  }
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.label,
+.text-input {
+  float: left;
+  display: block;
+  clear: both;
+}
+
+.label {
+  font-size: 0.8em;
+  margin-bottom: 0.2em;
+}
+
+.text-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: $margin / 2;
+
+  font-size: 1em;
+  font-family: inherit;
+
+  background: white;
+  border: 1px solid rgba($col-fg, 0.4);
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset;
+}
+
+.cvc-group {
+  flex-basis: 140px;
+}
+
+.name-group {
+  flex-grow: 1;
+  flex-basis: 200px;
+}
+
+.expiry-group {
+  flex-basis: 100px;
+}
+
+.cvc-help {
+  padding: 4px 0;
+  flex-grow: 0;
+  width: 200px;
+
+  font-size: 0.8em;
+  line-height: 1.3em;
+
+  opacity: 0.6;
+}
+
+.order-button {
+  padding: $margin / 2 $margin;
+  width: 100%;
+  box-sizing: border-box;
+
+  font-size: 1em;
+  font-family: inherit;
+  color: inherit;
+
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba($col-fg, 0.3);
+  box-shadow: 0 2px 2px rgba($col-fg, 0.1);
+  border-radius: 5px;
+
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+
+  &:hover {
+    background: darken($col-icing, 10%);
+    color: $col-icing-fg;
+    border-color: transparent;
+  }
+}

@@ -1,0 +1,184 @@
+@import "../../utils/functions.scss";
+@import "../../utils/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.containerFooter {
+  @include Flex(flex, space-between, stretch);
+  @include Gap(150px, 0);
+  max-width: $xl;
+  margin: 40px auto 0 auto;
+  font-family: $Roboto;
+
+  @include max-screen($xl) {
+    flex-direction: column;
+  }
+
+  &-1 {
+    @include Flex(flex, space-between, flex-start);
+    @include Gap(0, 50px);
+    flex-direction: column;
+    flex: 1;
+    margin: 0px 0 30px 0;
+
+    @include max-screen($xl) {
+      @include Gap(50px, 0);
+      flex-direction: row;
+      margin: 80px 20px;
+    }
+
+    @include max-screen($md) {
+      @include Flex(flex, center, center);
+      @include Gap(0, 50px);
+      flex-direction: column;
+      margin: 80px 20px;
+    }
+
+    .logo {
+      width: 100%;
+
+      @include max-screen($xl) {
+        width: auto;
+        flex: 1;
+      }
+
+      img {
+        width: 200px;
+      }
+
+      &-title {
+        @include Size(20px, 600, normal);
+        text-align: center;
+        color: $EagleGreen;
+      }
+    }
+
+    .group18 {
+      @include Flex(flex, center, flex-start);
+      @include Gap(0, 20px);
+      flex-direction: column;
+      width: 100%;
+
+      @include max-screen($xl) {
+        flex: 2;
+      }
+
+      &-title-1 {
+        @include Size(18px, 600, normal);
+      }
+
+      &-title-2 {
+        @include Size(15px, 500, normal);
+        color: $SonicSilver;
+      }
+
+      &-input {
+        @include Flex(flex, space-between, center);
+        border: 1px solid $EagleGreen;
+        border-radius: 24px;
+        width: 100%;
+        height: 44px;
+
+        @include max-screen($xl) {
+          width: 80%;
+        }
+
+        @include max-screen($md) {
+          width: 100%;
+        }
+
+        input {
+          flex: 1;
+          height: 42px;
+          border-radius: 24px;
+          border: none;
+          outline: none;
+          padding-left: 10px;
+
+          &::placeholder {
+            @include Size(13px, 600, normal);
+          }
+        }
+
+        button {
+          @include Size(15px, 400, normal);
+          border-radius: 24px;
+          border: none;
+          background-color: $EagleGreen;
+          color: white;
+          height: 40px;
+          margin: 1px;
+          padding: 0 20px;
+          cursor: pointer;
+          opacity: 1;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+  &-2 {
+    @include Gird(grid, 3);
+    @include Gap(20px, 20px);
+    flex: 2;
+
+    @include max-screen($xl) {
+      margin: 0 20px;
+    }
+
+    @include max-screen($md) {
+      @include Gird(grid, 2);
+    }
+
+    .group8 {
+      @include Flex(flex, flex-start, flex-start);
+      @include Gap(0, 20px);
+      flex-direction: column;
+
+      &-title-1 {
+        @include Size(18px, 600, normal);
+      }
+
+      &-title-2 {
+        @include Size(14px, 500, normal);
+        color: $SonicSilver;
+      }
+
+      .icon {
+        @include Flex(flex, flex-start, center);
+        @include Gap(20px, 0);
+        width: 80%;
+      }
+
+      button {
+        border-radius: 24px;
+        background-color: $EagleGreen;
+        border: 1px solid $EagleGreen;
+        color: white;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
+
+.copyright {
+  border-top: 1px solid $SonicSilver;
+  margin: 10px 20px;
+  font-family: $Roboto;
+
+  p {
+    @include Size(14px, 400, normal);
+    color: $SonicSilver;
+    text-align: center;
+    padding: 10px 0;
+  }
+}

@@ -1,0 +1,184 @@
+@import "../../utils/functions.scss";
+@import "../../utils/variables.scss";
+
+.pet {
+  width: 100%;
+  font-family: $Roboto;
+  background-color: white;
+  padding: 30px 30px 20px 30px;
+  border-radius: 8px;
+  &-title {
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      font-family: $Roboto;
+      color: #00575c;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    &-add {
+      button {
+        cursor: pointer;
+        padding: 10px 15px;
+        font-weight: 500;
+        border: none;
+        border-radius: 5px;
+        background-color: $EagleGreen;
+
+        @include max-screen($md) {
+          display: none;
+        }
+
+        .btn-add {
+          color: white;
+        }
+      }
+    }
+
+    &-plus {
+      color: $EagleGreen;
+      font-size: 26px;
+
+      @include min-screen($md) {
+        display: none;
+      }
+    }
+  }
+
+  &-table {
+    width: 100%;
+    padding: 0 10px;
+    border-collapse: collapse;
+
+    @include max-screen($md) {
+      display: none;
+    }
+
+    &-thead {
+      background-color: #fafafa;
+      color: $EagleGreen;
+
+      &-tr {
+        &-stt {
+          text-align: center;
+        }
+      }
+
+      th {
+        padding: 20px 8px;
+        text-align: left;
+      }
+    }
+
+    &-tbody {
+      td {
+        padding: 8px;
+      }
+
+      &-tr {
+        &-stt {
+          text-align: center;
+        }
+
+        &-image {
+          img {
+            width: 60px;
+          }
+        }
+
+        &-btn {
+          &-edit {
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            background-color: $SeaSerpent;
+            margin-left: 10px;
+
+            .btn-edit {
+              color: white;
+            }
+          }
+
+          &-detail {
+            border: none;
+            border-radius: 5px;
+            padding: 5px 15px;
+            background-color: $SeaSerpent;
+            color: white;
+            margin-left: 10px;
+          }
+        }
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    }
+  }
+
+  &-res {
+    @include min-screen($md) {
+      display: none;
+    }
+
+    &-item {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      &-image {
+        img {
+          width: 60px;
+        }
+      }
+
+      &-box {
+        flex: 1;
+        padding-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-text {
+          &-name {
+            font-size: 16px;
+            font-weight: 500;
+            word-break: break-word;
+          }
+
+          &-age {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+          }
+
+          &-breed {
+            display: flex;
+            gap: 10px;
+            font-size: 14px;
+          }
+        }
+
+        &-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          flex-direction: column;
+          font-size: 20px;
+
+          &-edit {
+            color: $EagleGreen;
+          }
+
+          &-delete {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

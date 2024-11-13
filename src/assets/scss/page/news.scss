@@ -1,0 +1,127 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.news {
+  max-width: 1240px;
+  margin: 10px auto;
+  @include Gird(grid, 4);
+  gap: 20px;
+
+
+  @include max-screen($xl) {
+    @include Gird(grid, 3);
+  }
+
+  @include max-screen($md) {
+    @include Gird(grid, 2);
+  }
+
+  @include max-screen(500px) {
+    margin: 0 auto;
+    @include Gird(grid, 1);
+  }
+
+  @include max-screen($xl) {
+    margin: 10px 2rem;
+  }
+}
+
+.detailNews {
+  max-width: 1240px;
+  margin: 10px auto;
+  display: flex;
+  gap: 20px;
+
+  @include max-screen($xl) {
+    margin: 10px 2rem;
+  }
+
+  &-recentPost {
+    width: 28%;
+
+    &-title {
+      font-size: 18px;
+      color: rgba(0, 0, 0, 1);
+      font-weight: 500;
+    }
+
+    &-hr {
+      margin: 5px 0;
+      width: 72px;
+      height: 3px;
+      background-color: $EagleGreen;
+    }
+
+    &-item {
+      margin-top: 20px;
+      height: 100px;
+      background-color: white;
+      display: flex;
+      gap: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      &-img {
+        img {
+          border-bottom-left-radius: 5px;
+          border-top-left-radius: 5px;
+          width: 113px;
+          height: 100%;
+        }
+      }
+
+      &-text {
+        margin: 10px;
+        height: auto;
+
+        &-title {
+          font-weight: 500;
+          font-size: 14px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &-date {
+          color: rgba(122, 122, 122, 1);
+          font-size: 12px;
+          font-weight: 500;
+          padding: 5px 0;
+        }
+        &-user {
+          color: rgba(122, 122, 122, 1);
+          font-size: 12px;
+          font-weight: 500;
+          padding: 5px 0;
+          span{
+            font-size: 14px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  &-item {
+    flex: 1;
+    background-color: white;
+    padding: 20px 40px;
+    &-title {
+      font-size: 32px;
+      line-height: 150%;
+      font-weight: bold;
+
+    }
+
+    &-description {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "../../utils/functions.scss";
+@import "../../utils/variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cancelledAppointment {
+  width: 100%;
+  background-color: white;
+  padding: 30px 30px 20px 30px;
+  border-radius: 8px;
+  h4 {
+    font-family: $Roboto;
+    color: #00575c;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .table-scroll {
+    overflow-x: auto;
+    margin: 30px 0px;
+    width: 100%;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      thead {
+        background-color: #fafafa;
+        color: $EagleGreen;
+        th {
+          padding: 10px 8px;
+        }
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 8px;
+      }
+      tbody {
+        .action {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .btn {
+            background-color: white;
+            padding: 5px 12px;
+            border: 1px solid #ff4d4f;
+            color: #ff4d4f;
+            border-radius: 12px;
+            cursor: pointer;
+            &:hover {
+              border: 1px solid #ff4d4f;
+              background-color: #ff4d4f;
+              span {
+                color: white;
+              }
+            }
+          }
+          .btn-done {
+            background-color: white;
+            padding: 5px 12px;
+            border: 1px solid #389e0d;
+            color: #389e0d;
+            border-radius: 12px;
+            cursor: pointer;
+            &:hover {
+              border: 1px solid #389e0d;
+              background-color: #389e0d;
+              span {
+                color: white;
+              }
+            }
+          }
+          .btn-edit {
+            background-color: white;
+            padding: 5px 12px;
+            border: 1px solid $EagleGreen;
+            color: $EagleGreen;
+            border-radius: 12px;
+            cursor: pointer;
+            &:hover {
+              border: 1px solid $EagleGreen;
+              background-color: $EagleGreen;
+              span {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+      @include max-screen($lg) {
+        th,
+        td {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+.notAppointment {
+  background-color: white;
+  padding: 60px 0;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

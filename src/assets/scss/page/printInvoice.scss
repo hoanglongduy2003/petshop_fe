@@ -1,0 +1,113 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+@media print {
+  .btn-print {
+    display: none;
+  }
+
+  .detailAppointment_modal_close {
+    display: none;
+  }
+
+  .infor-desc {
+    display: block !important;
+  }
+}
+
+.invoice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .invoice-details {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+
+    .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .invoice-header {
+      h2 {
+        margin: 0;
+        color: #00575c;
+      }
+    }
+
+    .invoice-body {
+      margin-top: 20px;
+      p {
+        margin: 5px 0;
+        color: #555;
+      }
+    }
+
+    .cancelledAppointment,
+    .notAppointment,
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      color: #00575c;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left; /* Align text left for both header and data cells */
+      }
+
+      th {
+        background-color: #f2f2f2;
+        text-align: left; /* Align header text left */
+      }
+
+      tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+
+      td {
+        text-align: left;
+        border-top: 1px solid #ddd;
+      }
+    }
+
+    .button-container {
+      button {
+        background-color: #1890ff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #40a9ff;
+        }
+      }
+    }
+  }
+}

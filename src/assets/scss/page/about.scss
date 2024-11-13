@@ -1,0 +1,34 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.about {
+  background: $Cultured;
+  padding: 2rem 0;
+  margin: 10px 0px 30px 0px;
+  .about_container {
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 0;
+    @include max-screen($xl) {
+      max-width: 900px;
+    }
+
+    @include max-screen($sx) {
+      padding: 0 25px;
+    }
+    .about_logo{
+      img{
+        width: 100%;
+      }
+    }
+    .about_title{
+      color: #00575c;
+    }
+  }
+}

@@ -1,0 +1,205 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.signUp {
+  width: 100%;
+  margin: 0 auto;
+  font-family: $fontFamily;
+
+  .singUp-top {
+    padding: 10px 20px;
+    margin: 0 100px;
+    @include Flex(flex, space-between, center);
+
+    @include max-screen($xxl) {
+      display: none;
+    }
+
+    @include max-screen($xl) {
+      margin: 0 50px;
+    }
+
+    .help {
+      text-decoration: none;
+      color: $EagleGreen;
+    }
+  }
+
+  img {
+    width: 100px;
+  }
+
+  .singUp-bottom {
+    position: relative;
+    text-align: center;
+    background-size: 100% 100%;
+    width: 100%;
+    height: auto;
+
+    .img-bg {
+      width: 100%;
+
+      @include max-screen($xxl) {
+        display: none;
+      }
+    }
+
+    .f-singUp {
+      box-shadow: 0 10px 30px -12px black;
+      border-radius: 8px;
+      width: 35%;
+      position: absolute;
+      top: 50px;
+
+      right: 10%;
+      background-color: white;
+      padding: 45px 35px;
+
+      h1,
+      p {
+        text-align: start;
+
+        .text-login {
+          color: $EagleGreen;
+          font-weight: bold;
+          text-decoration: none;
+          margin: 4px;
+        }
+
+        @include max-screen($lg) {
+          color: black;
+        }
+      }
+
+      .btn-f {
+        border: 1px solid $EagleGreen;
+        border-radius: 45px;
+        margin-bottom: 14px;
+        font-size: 13px;
+        background-color: white;
+        width: 100%;
+        padding: 15px 20px;
+        outline: none;
+        cursor: pointer;
+        color: black;
+      }
+
+      .input-flex {
+        display: flex;
+        flex-direction: column;
+
+        .error {
+          color: red;
+          text-align: center;
+          display: block;
+          margin-bottom: 0.8rem;
+        }
+      }
+
+      .bg-submit {
+        text-transform: uppercase;
+        font-size: 16px;
+        color: $Cultured;
+        background-color: $EagleGreen;
+
+        &:hover {
+          color: $EagleGreen;
+          background-color: $Cultured;
+        }
+      }
+
+      .or {
+        @include Flex(flex, center, center);
+
+        &-border {
+          flex: 1;
+          height: 1px;
+          background-color: $SonicSilver;
+          margin: 0 10px;
+
+          @include max-screen($lg) {
+            background-color: white;
+          }
+        }
+
+        @include max-screen($lg) {
+          color: white;
+        }
+      }
+
+      .btn-flex {
+        margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include max-screen($lg) {
+          flex-direction: row;
+        }
+
+        @include max-screen($sm) {
+          flex-direction: column;
+        }
+      }
+
+      .bg-with {
+        margin: 10px;
+        outline: none;
+        @include Flex(flex, center, center);
+
+        @include max-screen($lg) {
+          width: 50%;
+        }
+
+        @include max-screen($sm) {
+          width: 95%;
+        }
+
+        .google {
+          color: black;
+          margin-left: 8px;
+          text-decoration: none;
+        }
+
+        &:hover {
+          background: rgb(216, 215, 215);
+        }
+      }
+
+      .rule {
+        margin-top: 40px;
+        text-align: center;
+
+        .rule-click {
+          padding: 4px;
+          text-decoration: none;
+          color: $EagleGreen;
+        }
+
+        @include max-screen($lg) {
+          color: white;
+        }
+      }
+
+      @include max-screen($xxl) {
+        width: 100%;
+        text-align: start;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-shadow: none;
+      }
+    }
+
+    @include max-screen($lg) {
+      opacity: 1;
+    }
+  }
+}

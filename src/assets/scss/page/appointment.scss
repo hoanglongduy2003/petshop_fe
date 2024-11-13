@@ -1,0 +1,108 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.appointment {
+  max-width: $xl;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @include max-screen($xl) {
+    max-width: 900px;
+  }
+
+  @include max-screen($sx) {
+    padding: 0 25px;
+  }
+  .fromAppointment {
+    width: 80%;
+    margin: 0 auto;
+    @include Flex(flex, space-between, flex-start);
+    @include Gap(90px, 0);
+    .time{
+      &::before{
+        display: inline-block;
+        margin-inline-end: 4px;
+        color: #ff4d4f;
+        font-size: 14px;
+        font-family: SimSun,sans-serif;
+        line-height: 1;
+        content: "*";
+      }
+    }
+  }
+  .label {
+    &::before {
+      display: inline-block;
+      margin-inline-end: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+    }
+  }
+  .ant-form-item-control-input-content {
+    display: flex;
+    column-gap: 20px;
+  }
+  .ant-btn {
+    background-color: $EagleGreen;
+    border: 1px solid $EagleGreen;
+    color: white;
+    &:hover {
+      color: white !important;
+    }
+  }
+
+  :where(.css-dev-only-do-not-override-xu9wm8).ant-btn-primary:not(
+      :disabled
+    ):not(.ant-btn-disabled):hover {
+    background-color: white;
+    color: $EagleGreen;
+  }
+  .background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    backdrop-filter: grayscale(50%) blur(5px);
+    z-index: 10;
+  }
+  .modal-1 {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-radius: 24px;
+    padding: 20px;
+    height: 85%;
+  }
+  .form-1 {
+    overflow-x: hidden;
+    height: calc(100% - 38px);
+    width: 100%;
+  }
+  .icon-close {
+    &:hover {
+      color: $SilverSand;
+    }
+  }
+  .ant-radio {
+    z-index: 100;
+    left: -40%;
+    top: 10px;
+  }
+
+  :where(.css-dev-only-do-not-override-2q8sxy).ant-radio-wrapper
+    .ant-radio-checked
+    .ant-radio-inner {
+    background-color: $EagleGreen;
+    border-color: $EagleGreen;
+
+    &:hover {
+      background-color: red;
+    }
+  }
+}

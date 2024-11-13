@@ -1,0 +1,862 @@
+@import "../../utils/functions.scss";
+@import "../../utils/variables.scss";
+
+* {
+  font-family: $Roboto;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  box-sizing: border-box;
+}
+.login-now {
+  font-size: 18px;
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #fff;
+  img {
+    width: 100%;
+  }
+}
+
+.link {
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    color: $EagleGreen;
+  }
+}
+
+.account_info {
+  padding: 10px 5px 70px 5px;
+  background-color: $Cultured;
+  width: 100%;
+  box-sizing: border-box;
+
+  .account_info-row {
+    display: flex;
+    max-width: $xl;
+    margin: 0 auto;
+    gap: 10px;
+    @include max-screen($xl) {
+      margin: 10px 20px;
+    }
+
+    @include max-screen($lg) {
+      display: flex;
+      margin: 10px 20px;
+      flex-direction: column;
+    }
+
+    .account_info-heading {
+      font-size: 24px;
+      font-weight: 600;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 20px 0px;
+      margin: 0px 0px;
+
+      @include max-screen($lg) {
+        font-size: 20px;
+      }
+
+      @include max-screen($lg) {
+        background-color: white;
+        margin: 0;
+        border-radius: 10px;
+        padding: 20px 30px 20px 20px;
+      }
+    }
+
+    .account_info-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .col_1 {
+      display: flex;
+      flex: 1;
+      font-family: Arial, Helvetica, sans-serif;
+      @include max-screen($lg) {
+        width: 100%;
+        background-color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 10px;
+      }
+      .ant-menu-inline .ant-menu-item {
+        padding-inline: 0;
+      }
+      .account_col-list {
+        list-style: none;
+        line-height: 30px;
+
+        @include max-screen($lg) {
+          margin: 0px;
+        }
+
+        .history {
+          display: none;
+        }
+
+        .tracking {
+          display: none;
+        }
+
+        .account_col-item {
+          margin: 10px 0px;
+
+          :hover {
+            color: $EagleGreen !important;
+          }
+
+          .account_col-link {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            font-size: 16px;
+
+            .icon {
+              display: none;
+            }
+
+            @include max-screen($lg) {
+              font-size: 15px;
+              .icon {
+                display: block;
+                margin: 0px 10px 0px 0px;
+                width: 30px;
+                text-align: center;
+              }
+            }
+          }
+
+          .active {
+            color: $EagleGreen;
+          }
+
+          .history_table {
+            display: none;
+          }
+
+          .tracking_table {
+            display: none;
+          }
+
+          .history {
+            display: none;
+          }
+
+          .tracking {
+            display: none;
+          }
+
+          @include max-screen($lg) {
+            .his_track {
+              display: none;
+            }
+
+            .history_table {
+              display: block;
+            }
+
+            .tracking_table {
+              display: block;
+            }
+          }
+
+          @include max-screen($lg) {
+            .his_track {
+              display: none;
+            }
+
+            .history_table {
+              display: none;
+            }
+
+            .tracking_table {
+              display: none;
+            }
+
+            .history {
+              display: block;
+              display: flex;
+            }
+
+            .tracking {
+              display: block;
+              display: flex;
+            }
+          }
+        }
+      }
+      .ant-menu {
+        background: none;
+        border: none;
+        width: 100%;
+      }
+      .ant-menu-light {
+        width: 100%;
+      }
+      @include max-screen($lg) {
+        margin-left: 0;
+        padding-left: 15px;
+      }
+    }
+
+    .col_2 {
+      display: flex;
+      flex: 3;
+      hr {
+        opacity: 0.3;
+      }
+
+      @include max-screen($xl) {
+        width: 80%;
+        margin-top: 10px;
+        flex: 2;
+      }
+
+      @include max-screen($lg) {
+        width: 100%;
+        padding: 0;
+      }
+
+      .col_2-heading {
+        color: $EagleGreen;
+        margin: 0px 0px 40px 0px;
+        font-size: 24px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        padding: 0 20px;
+        @include max-screen($lg) {
+          font-size: 22px;
+          margin: 20px 0px 25px 0px;
+        }
+      }
+
+      .profile {
+        position: relative;
+        display: flex;
+        margin-bottom: 20px;
+
+        @include max-screen($lg) {
+          flex-direction: column;
+        }
+
+        &-tile {
+          flex: 1;
+          display: flex;
+          align-items: flex-start;
+          padding: 0 20px;
+          @include max-screen($lg) {
+            flex-direction: column;
+          }
+
+          .avatar-container {
+            position: relative;
+            cursor: pointer;
+            width: 175px;
+            height: 175px;
+            margin: 0 30px 20px 0;
+            margin-right: 30px;
+            border-radius: 100%;
+
+            @include max-screen($lg) {
+              margin: 0 auto;
+            }
+
+            .avatar {
+              border-radius: 100%;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .profile-detail {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            @include max-screen($lg) {
+              margin-top: 20px;
+            }
+
+            @media screen and (max-width: 991px) {
+              width: 100%;
+            }
+
+            .fullname {
+              font-size: 20px;
+              font-weight: 500;
+              word-break: break-word;
+              -ms-word-break: break-all;
+            }
+
+            .info {
+              display: flex;
+              padding: 5px 0;
+
+              @media screen and (max-width: 400px) {
+                flex-direction: column;
+              }
+
+              .col-title {
+                width: 125px;
+                min-width: 125px;
+              }
+
+              .col-info {
+                word-break: break-word;
+                -ms-word-break: break-all;
+                word-wrap: break-word;
+                max-width: calc(100% - 125px);
+
+                @media screen and (max-width: 400px) {
+                  max-width: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        &-edit {
+          display: flex;
+          justify-content: start;
+          gap: 10px;
+          flex-direction: column;
+          align-items: end;
+
+          @include max-screen($lg) {
+            flex-direction: row;
+            justify-content: end;
+            margin-top: 20px;
+          }
+
+          div {
+            .btn-edit {
+              cursor: pointer;
+              border: 1px solid #00575c;
+              background-color: #00575c;
+              color: #fff;
+              min-width: 100px;
+              padding: 7px 10px;
+              border-radius: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    .active {
+      display: block;
+    }
+  }
+}
+
+.breadcumb {
+  display: flex;
+  margin-top: 20px;
+
+  .home {
+    opacity: 0.9;
+    color: black;
+    text-decoration: none;
+  }
+
+  .slash {
+    margin: 0px 12px;
+  }
+
+  @include max-screen($md) {
+    padding: 10px 20px;
+  }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 30px 0px;
+  overflow: hidden;
+
+  th {
+    color: $EagleGreen;
+    background-color: #fafafa;
+    border: none;
+    outline: none;
+  }
+
+  th:first-child {
+    border-top-left-radius: 10px;
+    border-left: none;
+  }
+
+  th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+  }
+
+  td,
+  th {
+    line-height: 50px;
+  }
+
+  tbody {
+    tr {
+      td {
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: 1px solid #f0f0f0;
+
+        button {
+          padding: 6px 12px;
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: #e87878;
+          border: none;
+          outline: none;
+        }
+
+        button:hover {
+          background-color: #e75656;
+        }
+
+        a {
+          font-size: 15px;
+        }
+
+        a:hover {
+          cursor: pointer;
+          text-decoration: underline;
+          color: $EagleGreen;
+        }
+
+        @include max-screen($sm) {
+          button {
+            padding: 5px 7px;
+          }
+
+          button:hover {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: #fcfcfc;
+    }
+  }
+
+  @include max-screen($sm) {
+    width: 100%;
+
+    td {
+      font-size: 12px;
+      line-height: 30px;
+    }
+
+    th {
+      line-height: 30px;
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 50%;
+  margin-top: 70px;
+  transform: translateX(50%);
+  background-color: white;
+  width: 80%;
+  min-height: 20vh;
+  max-height: 85vh;
+  z-index: 10;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  @include max-screen($sm) {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .modal-content {
+    min-height: 100px;
+
+    .close {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 30px;
+      margin: -5px 30px 15px 0px;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    margin-top: 20px;
+    line-height: 30px;
+
+    table {
+      width: 100%;
+      line-height: 45px;
+      border-collapse: collapse;
+
+      th {
+        color: $EagleGreen;
+        background-color: #fafafa;
+        border: none;
+        outline: none;
+      }
+
+      th:first-child {
+        border-top-left-radius: 10px;
+        border-left: none;
+      }
+
+      th:last-child {
+        border-top-right-radius: 10px;
+        border-right: none;
+      }
+
+      td,
+      th {
+        line-height: 60px;
+      }
+
+      tbody {
+        tr {
+          td {
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-bottom: 1px solid #f0f0f0;
+
+            button {
+              padding: 6px 12px;
+              cursor: pointer;
+              border-radius: 5px;
+              background-color: #e87878;
+              border: none;
+              outline: none;
+            }
+
+            button:hover {
+              background-color: #e75656;
+            }
+
+            a {
+              font-size: 15px;
+            }
+
+            a:hover {
+              cursor: pointer;
+              text-decoration: underline;
+              color: $EagleGreen;
+            }
+
+            @include max-screen($sm) {
+              button {
+                padding: 5px 7px;
+              }
+
+              button:hover {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        tr:nth-child(even) {
+          background-color: #fcfcfc;
+        }
+
+        .done_pay {
+          color: $EagleGreen;
+          font-weight: bold;
+        }
+      }
+    }
+
+    text-align: center;
+  }
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.modal {
+  scrollbar-width: none;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 30px 0px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      background-color: #fafafa;
+      color: $EagleGreen;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tbody {
+      button {
+        background-color: #e87878;
+        padding: 5px 12px;
+        border-radius: 12px;
+      }
+
+      button:hover {
+        background-color: #e75656;
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    @include max-screen($lg) {
+      th,
+      td {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.modal_history {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 80%;
+  min-height: 20vh;
+  max-height: 85vh;
+  z-index: 10;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .modal-content-history {
+    min-height: 100px;
+    margin-top: 20px;
+    line-height: 30px;
+
+    .close {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 30px;
+      margin: -5px 30px 15px 0px;
+
+      .table-container {
+        display: flex;
+        flex-direction: column;
+
+        .row {
+          display: flex;
+          margin-bottom: 10px;
+
+          .label {
+            flex: 1;
+            font-weight: bold;
+          }
+
+          .value {
+            flex: 2;
+          }
+        }
+      }
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    .modal-table {
+      width: 100%;
+      line-height: 45px;
+      border-collapse: collapse;
+
+      @include max-screen($lg) {
+        thead {
+          display: none;
+        }
+
+        tbody > tr {
+          display: grid;
+          grid-template-rows: repeat(2, auto);
+          border: 1px solid #ccc;
+        }
+
+        .table-cell {
+          position: relative;
+          border: none;
+          border-bottom: 1px solid #eee;
+          padding-left: 50%;
+        }
+
+        .table-cell:before {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          width: 45%;
+          padding-right: 10px;
+          white-space: nowrap;
+          font-weight: bold;
+        }
+
+        .table-cell:nth-of-type(1):before {
+          content: "STT";
+        }
+
+        .table-cell:nth-of-type(2):before {
+          content: "Thông tin người đặt";
+        }
+
+        .table-cell:nth-of-type(3):before {
+          content: "Loại thú cưng";
+        }
+
+        .table-cell:nth-of-type(4):before {
+          content: "Loại dịch vụ";
+        }
+
+        .table-cell:nth-of-type(5):before {
+          content: "Nhân viên thực hiện";
+        }
+
+        .table-cell:nth-of-type(6):before {
+          content: "Phòng";
+        }
+
+        .table-cell:nth-of-type(7):before {
+          content: "Ca";
+        }
+
+        .table-cell:nth-of-type(8):before {
+          content: "Thời gian đặt";
+        }
+
+        .table-cell:nth-of-type(9):before {
+          content: "Trạng thái";
+        }
+      }
+
+      th {
+        color: $EagleGreen;
+        background-color: #fafafa;
+        border: none;
+        outline: none;
+      }
+
+      th:first-child {
+        border-top-left-radius: 10px;
+        border-left: none;
+      }
+
+      th:last-child {
+        border-top-right-radius: 10px;
+        border-right: none;
+      }
+
+      td,
+      th {
+        line-height: 60px;
+      }
+
+      tbody {
+        tr {
+          td {
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            border-bottom: 1px solid #f0f0f0;
+
+            button {
+              padding: 6px 12px;
+              cursor: pointer;
+              border-radius: 5px;
+              background-color: #e87878;
+              border: none;
+              outline: none;
+            }
+
+            button:hover {
+              background-color: #e75656;
+            }
+
+            a {
+              font-size: 15px;
+            }
+
+            a:hover {
+              cursor: pointer;
+              text-decoration: underline;
+              color: $EagleGreen;
+            }
+
+            @include max-screen($sm) {
+              button {
+                padding: 5px 7px;
+              }
+
+              button:hover {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+
+        tr:nth-child(even) {
+          background-color: #fcfcfc;
+        }
+
+        .done_pay {
+          color: $EagleGreen;
+          font-weight: bold;
+        }
+      }
+    }
+
+    text-align: center;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: grayscale(50%) blur(5px);
+  z-index: 0;
+}
+
+.custom-label-col {
+  width: 200px;
+}
+.bg-acc{
+  background-color: white;
+  padding: 30px 30px 20px 30px;
+  border-radius: 8px;
+}

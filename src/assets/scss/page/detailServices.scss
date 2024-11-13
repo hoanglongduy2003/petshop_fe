@@ -1,0 +1,331 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.detailServices {
+  padding: 10px 5px 70px 5px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: $xl;
+  margin: 0 auto;
+  font-family: $Geologica;
+
+  .service_info-row {
+    margin: 15px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: $fontFamily;
+  }
+
+  .serviceContent {
+    margin-top: 30px;
+    line-height: 45px;
+    @include Flex(Flex, space-around, "");
+
+    @include max-screen($lg) {
+      flex-direction: column;
+    }
+
+    .content-left {
+      margin-right: 12px;
+      width: 50%;
+      text-align: center;
+
+      img {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      @include max-screen($lg) {
+        width: 100%;
+      }
+    }
+
+    .content-right {
+      flex-direction: column;
+      width: 48%;
+      text-align: start;
+
+      @include max-screen($lg) {
+        width: 100%;
+      }
+
+      .item-flex {
+        display: flex;
+        margin-bottom: 15px;
+        column-gap: 10px;
+
+        .title-name {
+          text-transform: capitalize;
+          font-size: 25px;
+          font-weight: bold;
+
+          @include max-screen($lg) {
+            font-size: 20px;
+          }
+        }
+
+        .title-name-2 {
+          text-transform: capitalize;
+          font-size: 22px;
+          font-weight: 500;
+
+          @include max-screen($lg) {
+            font-size: 16px;
+          }
+        }
+
+        .price-flex {
+          display: flex;
+          align-items: baseline;
+
+          .list-price {
+            font-size: 22px;
+            color: red;
+          }
+
+          .list-price-sale {
+            margin-left: 8px;
+            font-size: 15px;
+            color: $SilverSand;
+            text-decoration: line-through;
+          }
+        }
+
+        .list {
+          font-size: 22px;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .flex-btn {
+      margin-top: 20px;
+
+      @include max-screen($lg) {
+        flex-direction: column;
+      }
+
+      .btn-router {
+        border: 1px solid $EagleGreen;
+        border-radius: 45px;
+        margin-left: 2px;
+        margin-bottom: 14px;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        background-color: white;
+        width: 100%;
+        padding: 19px 20px;
+        outline: none;
+        cursor: pointer;
+        color: $EagleGreen;
+
+        @include max-screen($lg) {
+          width: 100%;
+        }
+
+        p {
+          text-transform: uppercase;
+          color: $EagleGreen;
+        }
+
+        &:hover {
+          background-color: $EagleGreen;
+          transition: background-color 0.6s ease;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+          p {
+            color: $Cultured;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-service {
+    flex-direction: column;
+
+    .description-box {
+      margin: 12px;
+
+      .description-title {
+        margin-bottom: 20px;
+        border: 1px solid $EagleGreen;
+        background-color: $EagleGreen;
+        color: white;
+        width: 18%;
+        padding: 15px;
+        text-transform: uppercase;
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        white-space: nowrap;
+
+        @include max-screen($lg) {
+          width: 100%;
+        }
+      }
+
+      .description-text {
+        padding: 8px;
+      }
+    }
+  }
+
+  .serviceCardContainer {
+    display: grid;
+    grid-template-columns: 2.5fr 9.5fr;
+    /* Service Card chiếm 75%, Filter chiếm 25% */
+    gap: 20px;
+    /* Khoảng cách giữa các phần tử */
+
+    @include max-screen($lg) {
+      grid-template-columns: 1fr;
+      /* Khi màn hình nhỏ, chuyển sang hiển thị một cột */
+    }
+
+    .Filter {
+      height: 30%;
+
+      @include max-screen($lg) {
+        order: 2; // Đảo ngược thứ tự hiển thị khi màn hình nhỏ hơn hoặc bằng 1024px
+        height: 100%;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .Filter-box {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        div {
+          flex-grow: 1;
+        }
+
+        .title-box {
+          font-size: 19px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: $EagleGreen;
+        }
+
+        .text-box {
+          font-size: 16px;
+          font-family: $fontFamily;
+          margin: 0.5rem 0;
+          text-transform: capitalize;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 8px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .serviceCard {
+    width: 100%;
+
+    /* Chiếm toàn bộ width trong trường hợp chỉ có một cột */
+    @include max-screen($lg) {
+      width: auto;
+      /* Khi màn hình nhỏ, chiếm chiều rộng tự nhiên */
+    }
+
+    .content {
+      @include Gird(grid, 3);
+      @include Gap(20px, 30px);
+      align-items: center;
+
+      @include max-screen($md) {
+        @include Gird(grid, 2);
+      }
+
+      @include max-screen($sm) {
+        @include Gird(grid, 1);
+      }
+
+      margin: 0 auto;
+      padding-bottom: 25px;
+      margin: 0px 0px 0 20px;
+
+      @include max-screen($sx) {
+        margin: 30px 0;
+      }
+
+      .card {
+        &:hover {
+          .nameService {
+            color: $EagleGreen;
+            opacity: 0.6;
+          }
+        }
+      }
+      ul {
+        padding: 10px 0 0 24px;
+      }
+      .nameService {
+        color: $EagleGreen;
+        font-weight: bold;
+        padding-left: 24px;
+        margin: 20px 0 0 0;
+        text-align: start;
+        font-size: 18px;
+        text-transform: capitalize;
+      }
+
+      .sold-flex {
+        @include Flex(Flex, space-between, center);
+
+        .priceService {
+          color: $EagleGreen;
+          padding-left: 24px;
+          margin: 20px 0px;
+          text-align: start;
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        .sold {
+          color: $SilverSand;
+          padding-right: 24px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .content > div {
+      border-radius: 10px;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      margin: auto 0.5rem;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      height: 100%;
+    }
+
+    .content img {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      width: 100%;
+      height: 16em;
+      object-fit: cover;
+    }
+  }
+}

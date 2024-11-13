@@ -1,0 +1,158 @@
+@import "../utils/functions.scss";
+@import "../utils/variables.scss";
+
+.search-appointments {
+  display: flex;
+  justify-content: space-between;
+
+  &-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+    @include max-screen(420px) {
+      grid-template-columns: 1fr;
+    }
+
+    .ant-form-item {
+      margin: 0;
+    }
+  }
+}
+
+.appointment-edit {
+  .fromAppointment {
+    width: 90%;
+    margin: 0 auto;
+    @include Flex(flex, space-between, flex-start);
+    @include Gap(90px, 0);
+  }
+
+  .label {
+    &::before {
+      display: inline-block;
+      margin-inline-end: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: "*";
+    }
+  }
+
+  .ant-form-item-control-input-content {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  .ant-btn {
+    background-color: $EagleGreen;
+    border: 1px solid $EagleGreen;
+  }
+
+  :where(.css-dev-only-do-not-override-xu9wm8).ant-btn-primary:not( :disabled):not(.ant-btn-disabled):hover {
+    background-color: white;
+    color: $EagleGreen;
+  }
+
+  .background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: grayscale(50%) blur(5px);
+    z-index: 10;
+  }
+
+  .modal-1 {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-radius: 24px;
+    padding: 20px;
+  }
+ .ant-radio {
+    z-index: 100;
+    left: -40%;
+    top: 10px;
+  }
+}
+
+.btn-status-appointment {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.detailAppointment {
+  &_modal {
+    position: fixed;
+    top: 5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 90vh;
+    background-color: white;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    transition: margin 0.7s ease-in-out;
+    border-radius: 24px;
+    z-index: 20;
+    padding: 20px;
+
+    &_close {
+      padding: 10px;
+      border-radius: 24px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+
+    .table {
+      &_vertical {
+        display: flex;
+
+        &:nth-child(2n + 1) {
+          background: #eaeaea;
+        }
+
+        &:nth-child(2n + 2) {
+          background: white;
+        }
+
+        .text-left {
+
+          text-align: left;
+
+          &:nth-child(2n + 1) {
+            padding-left: 150px;
+            flex: 1;
+          }
+
+          &:nth-child(2n + 2) {
+            flex: 2;
+          }
+        }
+      }
+    }
+  }
+
+  .background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: grayscale(50%) blur(5px);
+    z-index: 10;
+  }
+}
+
+.btn-option {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title-appoiment {
+  margin-bottom: 1rem;
+  font-size: 25px;
+  padding: 0.8rem;
+  border-radius: 3px;
+  background: white;
+}
